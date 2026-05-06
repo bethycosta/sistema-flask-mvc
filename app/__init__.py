@@ -11,6 +11,10 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
     app.config['JWT_SECRET_KEY'] = 'segredo-super'
 
+    @app.route("/")
+    def home():
+        return {"msg": "API funcionando 🚀"}
+
     db.init_app(app)
     jwt.init_app(app)
 
@@ -24,6 +28,3 @@ def create_app():
         db.create_all()
 
     return app
-    @app.route("/")
-        def home():
-            return {"msg": "API Flask rodando com sucesso 🚀"}
