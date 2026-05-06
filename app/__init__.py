@@ -6,9 +6,6 @@ db = SQLAlchemy()
 jwt = JWTManager()
 
 def create_app():
-    @app.route("/")
-    def home():
-        return {"msg": "API Flask rodando com sucesso 🚀"}
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
@@ -27,3 +24,6 @@ def create_app():
         db.create_all()
 
     return app
+    @app.route("/")
+        def home():
+            return {"msg": "API Flask rodando com sucesso 🚀"}
