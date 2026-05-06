@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
+from flask import render_template
 
 db = SQLAlchemy()
 jwt = JWTManager()
@@ -13,7 +14,7 @@ def create_app():
 
     @app.route("/")
     def home():
-        return {"msg": "API funcionando 🚀"}
+        return render_template("index.html")
 
     db.init_app(app)
     jwt.init_app(app)
