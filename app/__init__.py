@@ -11,7 +11,6 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
     app.config['JWT_SECRET_KEY'] = 'segredo-super'
 
-    # ✅ ROTA HOME TEM QUE ESTAR AQUI DENTRO
     @app.route("/")
     def home():
         return {"msg": "API funcionando 🚀"}
